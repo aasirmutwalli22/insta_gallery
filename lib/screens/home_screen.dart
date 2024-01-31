@@ -11,7 +11,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Insta Gallary'),
-        elevation: 1,
       ),
       body: ListView(
         children: [
@@ -27,8 +26,7 @@ class HomeScreen extends StatelessWidget {
             ),
             subtitle: const Text('Hello'),
             trailing: const Text('11:12 AM'),
-            onTap: () => GoRouter.of(context)
-                .pushNamed(AppRouteNames.instagramDownloader),
+            onTap: () => GoRouter.of(context).pushNamed(AppRouteNames.chat),
           ),
           const Divider(
             indent: 70,
@@ -46,8 +44,7 @@ class HomeScreen extends StatelessWidget {
             ),
             subtitle: const Text('Hello'),
             trailing: const Text('11:12 AM'),
-            onTap: () =>
-                GoRouter.of(context).pushNamed(AppRouteNames.youtubeDownloader),
+            onTap: () => GoRouter.of(context).pushNamed(AppRouteNames.chat),
           ),
         ],
       ),
