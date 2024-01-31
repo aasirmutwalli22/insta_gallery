@@ -20,15 +20,8 @@ jobs:
       # - run: flutter format --set-exit-if-changed .
       - run: flutter analyze .
       - run: flutter build apk --split-per-abi
-      - uses: actions/upload-artifact@v1
+      - name: Upload Android Release
+        uses: actions/upload-artifact@v2
         with:
-          name: release-apk
-          path: |
-            build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk
-            build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
-            build/app/outputs/flutter-apk/app-x86_64-release.apk
-      - uses: ncipollo/release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          artifacts: "*.apk"
+          name: android-release
+          path: build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
